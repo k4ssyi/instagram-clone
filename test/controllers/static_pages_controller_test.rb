@@ -7,19 +7,19 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get home" do
-    get '/'
+    get root_path
     assert_response :success
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
-  test "should get help" do
-    get '/help'
+  test "should get notice" do
+    get notice_path
     assert_response :success
-    assert_select "title", "Help | #{@base_title}"
+    assert_select "title", "Notice | #{@base_title}"
   end
 
   test "should get about" do
-    get '/about'
+    get about_path
     assert_response :success
     assert_select "title", "About | #{@base_title}"
   end
