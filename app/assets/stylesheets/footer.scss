@@ -1,0 +1,22 @@
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  color: #d3d3d3;
+  a {
+    color: #808080;
+    &:hover {
+      color: #d3d3d3;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}

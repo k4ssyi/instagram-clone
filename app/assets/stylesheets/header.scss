@@ -1,0 +1,18 @@
+.navbar-inverse {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: black;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
