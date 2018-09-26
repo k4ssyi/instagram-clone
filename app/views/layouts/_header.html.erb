@@ -5,7 +5,7 @@
           <ul class="nav navbar-nav navbar-right">
 <%# 検索窓%>            <li><form><input type="text" onfocus="placeholders()" value="キーワードを入力" id="placeholder" /></form></li>
             <li><%= link_to "通知",   top_notice_path %></li>
-<!--            <li><%#= link_to "プロフィール", top_about_path %></li>  -->
+            <li><%= link_to "プロフィール", user_path(id: 1) %></li>
           </ul>
         </nav>
       </div>
