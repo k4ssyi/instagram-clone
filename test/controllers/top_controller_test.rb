@@ -6,4 +6,9 @@ class TopControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get notice Page" do
+    get top_notice_path
+    assert_response :success
+  end
+
 end
