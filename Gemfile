@@ -11,6 +11,7 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 
 gem 'devise'
+gem 'devise-i18n'
 gem "font-awesome-sass"
 gem 'carrierwave', '~> 1.0'
 gem 'rmagick'

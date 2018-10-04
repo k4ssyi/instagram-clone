@@ -62,6 +62,6 @@ Rails.application.configure do
     :domain => 'smtp.gmail.com',
     :authentication => 'plain',
     :user_name => 'kasikasi00@gmail.com',
-    :password => 'k4ssyi@0422'
+    :password => 'kasikasi@0422'
   }
 end
