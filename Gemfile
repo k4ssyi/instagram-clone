@@ -15,6 +15,7 @@ gem 'devise-i18n'
 gem "font-awesome-sass"
 gem 'carrierwave', '~> 1.0'
 gem 'rmagick'
+gem 'faker'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

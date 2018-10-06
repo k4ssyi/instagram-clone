@@ -6,36 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-p "create Users"
-User.create!(
-  email: 'user1@example.com',
-  password: 'aaaaaaaa',
-  name: '佐藤 太郎',
-  self_introduction: '佐藤太郎です',
-  sex: 0,
-  img_name: open("#{Rails.root}/db/dummy_images/1.jpg")
-)
-User.create!(
-  email: 'user2@example.com',
-  password: 'aaaaaaaa',
-  name: '平野 貴史',
-  self_introduction: '平野貴史です',
-  sex: 0,
-  img_name: open("#{Rails.root}/db/dummy_images/2.jpg")
-)
-User.create!(
-  email: 'user3@example.com',
-  password: 'aaaaaaaa',
-  name: '田渕 望',
-  self_introduction: '田渕望です',
-  sex: 1,
-  img_name: open("#{Rails.root}/db/dummy_images/3.jpg")
-)
-User.create!(
-  email: 'user4@example.com',
-  password: 'aaaaaaaa',
-  name: '高谷 瑠美',
-  self_introduction: '高谷瑠美です',
-  sex: 1,
-  img_name: open("#{Rails.root}/db/dummy_images/4.jpg")
-)
+20.times do |n|
+  name  = Faker::Name.name
+  email = "example-#{n+1}@email.com"
+  password = "password"
+  introduction = "こんにちは#{name}です。"
+  sex = rand(2)
+
+  User.create!(name:  name,
+               email: email,
+               password:              password,
+               password_confirmation: password,
+               self_introduction: introduction,
+               sex: sex)
+end
+
+4.times do |n|
+  User.find(n+1).update_column(:img_name, "#{n+1}.jpg")
+end
+
+users = User.order(:created_at).take(6)
+30.times do
+  content = Faker::Lorem.sentence(5)
+  users.each { |user| user.microposts.create!(content: content) }
+end
