@@ -11,5 +11,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   mount_uploader :img_name, ImgNameUploader
-  enum sex: { 男: 0, 女: 1 }
+  enum sex: { ç”·: 0, å¥³: 1 }
+
+  #仮実装
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
 end

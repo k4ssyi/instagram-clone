@@ -5,17 +5,28 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    &_title {
-      margin-top: 12vh;
+  }
+}
+
+.userInfo {
+  &_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: auto;
+    &>img {
+      width: 100%;
     }
-    &_btn {
-      display: block;
-      max-width: 400px;
-      padding: 20px;
-      margin: 0 auto;
-      border-radius: 30px;
-      background: #fd5068;
-      color: #fff;
-    }
+  }
+
+  &_name {
+    text-align: right;
+    font-size: 16px;
+  }
+
+  &_microcount {
+    text-align: right;
+    font-size: 16px;
   }
 }

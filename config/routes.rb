@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root 'top#index'
   get 'top/notice'
   resources :users, only: %i(show)
+  resources :microposts,          only: [:show,:create, :destroy]
 end

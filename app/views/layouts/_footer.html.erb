@@ -4,7 +4,7 @@
   </small>
   <nav>
     <ul>
-      <li><%= link_to "画像アップロード", '#', class: "btn btn-lg btn-primary"%></li>
+      <li><%= link_to "画像投稿アップロード", micropost_path(current_user), class: "btn btn-lg btn-primary" if user_signed_in? %></li>
     </ul>
   </nav>
 </footer>
