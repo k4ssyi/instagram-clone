@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-20.times do |n|
+4.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@email.com"
   password = "password"
@@ -18,11 +18,9 @@
                password:              password,
                password_confirmation: password,
                self_introduction: introduction,
-               sex: sex)
-end
-
-4.times do |n|
-  User.find(n+1).update_column(:img_name, "#{n+1}.jpg")
+               sex: sex,
+               img_name: open("#{Rails.root}/db/dummy_images/#{n+1}.jpg")
+             )
 end
 
 users = User.order(:created_at).take(6)
