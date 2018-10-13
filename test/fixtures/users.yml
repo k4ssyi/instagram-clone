@@ -4,3 +4,10 @@ john:
   self_introduction: "hello I am john"
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   sex: 0
+
+jack:
+  name: "jack"
+  email: "jack@example.com"
+  self_introduction: "私は jack"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  sex: 1
