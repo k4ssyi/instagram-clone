@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class UsersSignupTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   test "invalid signup information" do
       get new_user_registration_path
       assert_no_difference 'User.count' do

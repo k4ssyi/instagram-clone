@@ -1,7 +1,9 @@
 require 'test_helper'
 
-class UsersControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+class UsersControllerTest < ActionController::TestCase
+  include Devise::Test::ControllerHelpers
+  def setup
+    @user = users( :john )
+    sign_in(@user)
+  end
 end
