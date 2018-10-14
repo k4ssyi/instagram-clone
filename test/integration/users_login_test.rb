@@ -4,7 +4,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   def setup
-    @user = users(:john)
+    @user = users(:emiya)
   end
 
   test "login with invalid information" do

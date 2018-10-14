@@ -4,11 +4,11 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   def setup
-    @user = users(:john)
+    @user = users(:emiya)
   end
 
   test "micropost interface" do
-    sign_in users(:john)
+    sign_in users(:emiya)
     get root_path
     # 無効な送信
     assert_no_difference 'Micropost.count' do

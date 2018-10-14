@@ -1,0 +1,15 @@
+one:
+  follower: emiya
+  followed: lana
+
+two:
+  follower: emiya
+  followed: malory
+
+three:
+  follower: lana
+  followed: emiya
+
+four:
+  follower: jack
+  followed: emiya

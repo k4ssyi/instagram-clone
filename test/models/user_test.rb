@@ -70,4 +70,33 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+  test "should follow and unfollow a user" do
+    emiya = users(:emiya)
+    jack  = users(:jack)
+    assert_not emiya.following?(jack)
+    emiya.follow(jack)
+    assert emiya.following?(jack)
+    assert jack.followers.include?(emiya)
+    emiya.unfollow(jack)
+    assert_not emiya.following?(jack)
+  end
+
+  test "feed should have the right posts" do
+    emiya = users(:emiya)
+    jack  = users(:jack)
+    lana    = users(:lana)
+    # フォローしているユーザーの投稿を確認
+    lana.microposts.each do |post_following|
+      assert emiya.feed.include?(post_following)
+    end
+    # 自分自身の投稿を確認
+    emiya.microposts.each do |post_self|
+      assert emiya.feed.include?(post_self)
+    end
+    # フォローしていないユーザーの投稿を確認
+    jack.microposts.each do |post_unfollowed|
+      assert_not emiya.feed.include?(post_unfollowed)
+    end
+  end
 end
