@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 
+gem 'rails-i18n', '~> 5.1'
 gem 'devise'
 gem 'devise-i18n'
 gem "font-awesome-sass"
